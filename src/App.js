@@ -8,10 +8,11 @@ function App() {
   return (
  <div className="container">
  <Header />
- <Intro />
- <Task taskDescription="Buy some milk"/>
- <Task taskDescription="Buy some milk"/>
- <Task taskDescription="Buy some milk"/>
+ <Intro introDescription ="Hello there"/>
+ <Intro introDescription ="yes"/>
+ <Task taskDescription="Wow"/>
+ <Task taskDescription="Let the dog out "/>
+ <Task taskDescription="Hello"/>
  </div>
   );
 }

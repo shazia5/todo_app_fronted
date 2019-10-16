@@ -1,8 +1,8 @@
 import React from 'react';
 class Intro extends React.Component {
-    render(){
+    render() {
         return(
-            <p>Welcome to my new app</p>
+            <p>{this.props.introDescription}</p>
         );
     }
 }
