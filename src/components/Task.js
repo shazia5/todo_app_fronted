@@ -3,7 +3,10 @@ class Task extends React.Component {
     render(){
         return(
             <div className="row">
-              <div className="col-8">
+            <div className="col-2">
+            check 
+            
+            <div className="col-6">
               {this.props.taskDescription}
             </div>
 
@@ -11,7 +14,8 @@ class Task extends React.Component {
             Done
               </div>
             <div className="col-2">
-            Delete
+            Edite
+            </div>
             </div>
             </div>
 
