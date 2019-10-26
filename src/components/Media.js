@@ -4,7 +4,7 @@ class Media extends React.Component {
     render(){
         return(
         
-     <div className="scenic view " >
+     <div className="Scenic view " >
      </div>
         );
     }
