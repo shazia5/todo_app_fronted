@@ -40,16 +40,13 @@ import TaskCounter from './components/TaskCounter';
 
 class App extends React.Component {
 
-  state = {
-    tasks: []
-  }
-
+state = {
+  tasks:[]
+}
   addTaskToList = (task) => {
     let tasks = this.state.tasks;
-
-    tasks.push(task);
-
-    this.setState({tasks});
+      tasks.push(task);
+      this.setState({tasks});
   }
 
   render() {
