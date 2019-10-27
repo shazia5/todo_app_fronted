@@ -1,32 +1,71 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
-import Intro from './components/Intro';
-import Task from './components/Task';
-import Media from './components/Media';
+import AddTask from './components/AddTask';
+import TaskList from './components/TaskList';
+import Footer from './components/Footer';
+import TaskCounter from './components/TaskCounter';
 
 
-function App() {
-  return ( 
-    <div className = "container" >
+
+
+// function App() {
+//   return ( 
+//     <div className = "container" >
     
-   < Header />
+//     < Header />
     
-   < Media imageAdded = "scenic view " />
+//      <TaskList listAdded = "ADD NEW TASK HERE "/>
+       
+//       <AddTask taskDescription = "remaining task"/> 
     
-  
-    <Intro introDescription = "remaining task"/> 
+//        <Task taskDescription = "Iman's PTA @ 6pm" />
     
-    <Task taskDescription = "Iman's PTA @ 6pm" />
-    <Task taskDescription = "make orthodontist appointment for Arryan" />
+//        <Task taskDescription = "make orthodontist appointment for Arryan" />
     
-    <Task taskDescription = "book theory test for Areesh" />
+//        <Task taskDescription = "book theory test for Areesh" />
     
-    <Task taskDescription = "take windows measurement to order curtain " />
+//        <Task taskDescription = "take windows measurement to order curtain " />
+
+//        <Task taskDescription = "pick up prescription from GP" />
      
-    <Task taskDescription = "pick up prescription from GP" />
-    </div>
-  );
+//         <Footer  addButton = "add button "/>
+     
+//    </div>
+  
+//   );
+// } 
+
+
+
+class App extends React.Component {
+
+  state = {
+    tasks: []
+  }
+
+  addTaskToList = (task) => {
+    let tasks = this.state.tasks;
+
+    tasks.push(task);
+
+    this.setState({tasks});
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <Header />
+        <AddTask newTask={this.addTaskToList} />
+        <TaskCounter count={this.state.tasks.length} />
+        <TaskList tasks={this.state.tasks} />
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
+
+
+      
