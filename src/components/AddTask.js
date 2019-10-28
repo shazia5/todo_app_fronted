@@ -14,10 +14,9 @@ class AddTask extends React.Component {
         completed: false
     }
 
-    // Utilise the function we passed down to this component
     this.props.newTask(task);
 
-    // Clear out text field for UX
+    
     this.setState({taskDescription: ""});
   }
 
