@@ -40,12 +40,25 @@
 }
 .navbar {
   height: 100px;
+
   background-color: black;
   color:whitesmoke;
   margin-bottom: 15px;
   text-align: center;
-  font-size: 50px;
+  font-size: 70px;
   display:flex;
   justify-content: center;
   align-items: center;
+  font-family: cursive;
+  font-style: oblique;
+
 }
+.taskRow {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-top: 2px solid grey;
+}
+
+
+
+  
