@@ -23,39 +23,43 @@
       ]
     }
   
-    addTaskToList = (task) => {
+  addTaskToList = (task) => {
       let tasks = this.state.tasks;
       tasks.push(task);
       this.setState({tasks: tasks});
-    }
+ }
   
-    deleteTask = (taskId) => {
+  deleteTask = (taskId) => {
       alert('App ll delete task ${taskId}');
+      console.log(taskId)
   // This will be an array of tasks that are in state
       let tasks = this.state.tasks;
       let filteredTasks = tasks.filter(function(task) {
         return (task.id !== taskId)
-    });
+ });
        this.setState({tasks: filteredTasks});
+}
+completeTask = id => {
+  const updatedTasks = this.state.tasks.map(task => {
+    if (task.id === id) {
+      task.completed = true;
     }
-    markTaskChecked = (taskId) =>{
-        this.setState(prevState => {
-                  const completedTask = prevState.state.tasks.map(task => {
-                      if (task.id === taskId) {
-                        return {
-                   ...task,
-                         completed: !task.completed
-         } 
-       }
-                  return task
-              })          
-               return {
-                   tasks: completedTask
-     }  
-  })                
+
+    return task;
+  });
+
+  this.setState({
+    tasks: updatedTasks
+  });
 }
   
     render() {
+      const completedTasks = this.state.tasks.filter(task => {
+        return task.completed;
+      })
+      const incompleteTasks = this.state.tasks.filter(task => {
+        return task.completed ? false : true;
+      });
       return (
         <div className="container">
           <Header />

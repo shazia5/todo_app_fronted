@@ -34,10 +34,11 @@ render() {
               
   
     <div className="col-4 col-md-2">
-         <button type="button" 
+    this.props.completed &&     
+    <button type="button" 
         
-         className="btn btn-primary" onClick={this.editTask}
-         >Edit </button>
+         className="btn btn-primary my-small-btn btn btn-sm" onClick={this.handleComplete}
+         >Done </button>
 </div>
       
     <div className="col-4 col-md-2">
