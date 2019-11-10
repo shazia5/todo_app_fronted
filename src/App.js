@@ -25,24 +25,35 @@
   
     addTaskToList = (task) => {
       let tasks = this.state.tasks;
-  
       tasks.push(task);
-  
       this.setState({tasks: tasks});
     }
   
     deleteTask = (taskId) => {
-  
-      // This will be an array of tasks that are in state
+      alert('App ll delete task ${taskId}');
+  // This will be an array of tasks that are in state
       let tasks = this.state.tasks;
-  
       let filteredTasks = tasks.filter(function(task) {
-        return task.id !== taskId;
-      });
-  
-  
-      this.setState({tasks: filteredTasks});
+        return (task.id !== taskId)
+    });
+       this.setState({tasks: filteredTasks});
     }
+    markTaskChecked = (taskId) =>{
+        this.setState(prevState => {
+                  const completedTask = prevState.state.tasks.map(task => {
+                      if (task.id === taskId) {
+                        return {
+                   ...task,
+                         completed: !task.completed
+         } 
+       }
+                  return task
+              })          
+               return {
+                   tasks: completedTask
+     }  
+  })                
+}
   
     render() {
       return (
@@ -52,7 +63,7 @@
           <TaskCounter count={this.state.tasks.length} />
           <br />
           <TaskList tasks=
-          {this.state.tasks} deleteTaskFunc={this.deleteTask} />
+          {this.state.tasks} deleteTaskFunc={this.deleteTask}taskCompletedFun={this.taskCompleted} />
           <Footer />
         </div>
       );

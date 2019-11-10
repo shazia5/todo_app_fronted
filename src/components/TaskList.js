@@ -13,7 +13,9 @@ class TaskList extends React.Component {
         
       <div>
       {this.props.tasks.map((task, index) => {
-          return <Task deleteTaskFunc={this.props.deleteTaskFunc} task={task} key={index} markTaskAsCompleted={this.props.markTaskAsCompleted}/>;
+          return <Task deleteTaskFunc={this.props.deleteTaskFunc}              task={task} key={index} 
+                       
+                      />;
       })}
 
       </div>

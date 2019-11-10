@@ -29,4 +29,9 @@
 .completedTask {
   text-decoration: line-through;
 }
+.button{
+  font-style:small;
+ 
+}
+
 /*  */

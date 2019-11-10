@@ -39,8 +39,7 @@ if(this.state)
             type="text"
             placeholder="What do you want to do..."
             value={this.state.taskDescription}
-            onChange={this.taskDescriptionChanged}
-          />
+            onChange={this.taskDescriptionChanged}></input>
         </div>
         <div className="col-12 col-md-2">
           <button type="button" className="btn btn-success" onClick={this.addTask}>
