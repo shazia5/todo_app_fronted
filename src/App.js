@@ -30,7 +30,7 @@
  }
   
   deleteTask = (taskId) => {
-      alert('App ll delete task ${taskId}');
+    alert(`App will delete task ${taskId}`);
       console.log(taskId)
   // This will be an array of tasks that are in state
       let tasks = this.state.tasks;
@@ -39,27 +39,24 @@
  });
        this.setState({tasks: filteredTasks});
 }
-completeTask = id => {
-  const updatedTasks = this.state.tasks.map(task => {
-    if (task.id === id) {
-      task.completed = true;
-    }
-
-    return task;
-  });
-
-  this.setState({
-    tasks: updatedTasks
-  });
+    markTaskChecked = (taskId) =>{
+        this.setState(prevState => {
+                  const completedTask = prevState.state.tasks.map(task => {
+                      if (task.id === taskId) {
+                        return {
+                   ...task,
+                         completed: !task.completed
+         } 
+       }
+                  return task
+              })          
+               return {
+                   tasks: completedTask
+     }  
+  })                
 }
   
     render() {
-      const completedTasks = this.state.tasks.filter(task => {
-        return task.completed;
-      })
-      const incompleteTasks = this.state.tasks.filter(task => {
-        return task.completed ? false : true;
-      });
       return (
         <div className="container">
           <Header />

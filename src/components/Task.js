@@ -12,7 +12,6 @@ addTaskToList = () => {
 
 render() {
     const completed = this.props.task.completed;
-
     return (
        <div className="row taskrow">
 
@@ -26,26 +25,24 @@ render() {
           {this.props.task.taskDescription}
        </div>
        }
-       <div className="col-4 col-md-2">
-       <input type="checkbox"
-       aria-labelledby="Checkbox for following 
-       text input"></input>
+     <div className="col-4 col-md-2">
+        <input type="checkbox"
+      
+        aria-label="Checkbox for following 
+        text input"></input>
 </div>       
               
   
     <div className="col-4 col-md-2">
-    this.props.completed &&     
-    <button type="button" 
-        
-         className="btn btn-primary my-small-btn btn btn-sm" onClick={this.handleComplete}
-         >Done </button>
+         <button type="button" style={{fontSize:'X-Small'}}className="btn btn-primary" onClick={this.editTask}
+         >Edite </button>
 </div>
-      
+
     <div className="col-4 col-md-2">
         <button type="button"
-        style={{fontSize:'X-Small'}}
         className="btn btn-danger" onClick={this.deleteTask}>
-        Delete</button>
+        Delete
+     </button>
   </div>
 </div>
    );
