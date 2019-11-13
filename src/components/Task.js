@@ -7,10 +7,10 @@ class Task extends React.Component {
         this.props.deleteTaskFunc(this.props.task.id);
     }
     completedTask = () => {
-        this.props.completedTaskFunc(this.props.task.id)
+        this.props.completedTask(this.props.task.id)
     }
     render() {
-        const completed = this.props.task.completed
+        const completed = this.props.task.completed;
         return (
             <div className="row taskrow">
                 {completed &&
@@ -28,15 +28,15 @@ class Task extends React.Component {
                 }
                 <div className="col-6 col-md-3">
 
-                    <button type="button" className="btn btn-primary btn-sm m-1 btn-size " onClick={this.completeTask}>
+                    <button type="button" className="btn btn-primary" onClick={this.addTask}>
                         Done
                             </button>
                 </div>
                 <div>
                     <div className="col-6 col-md-3">
 
-                        <button type="button" className="btn btn-danger btn-sm m-1 btn-size" onClick={this.deleteTask}>
-                            Delete
+                        <button type="button" className="btn btn-danger" onClick={this.deleteTask}>
+                            delete
                     </button>
                     </div>
                 </div>
@@ -46,14 +46,3 @@ class Task extends React.Component {
     }
 }
 export default Task;
-       
-  
- 
-      
-
-      
-    
-              
-
-      
-    

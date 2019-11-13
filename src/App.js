@@ -27,40 +27,28 @@
      tasks.push(task);
      this.setState({ tasks: tasks });
    }
-  
    deleteTask = (taskId) => {
-   let tasks = this.state.tasks;
-   let filteredTasks = tasks.filter(function (task) {
-       return task.id !== taskId;
- });
-     this.setState({ tasks: filteredTasks
- });
-}
-
-    completeTask = (taskId) => {
+ 
      let tasks = this.state.tasks;
-      let filteredTasks = tasks.filter(function (task) {
-         return task.id !== taskId;
-});
-      this.setState({ tasks: filteredTasks
-});
-}
-
-
-
-
-
+ 
+     let filteredTasks = tasks.filter(function (task) {
+       return task.id !== taskId;
+       
+     });
+     this.setState({ tasks: filteredTasks });
+ 
+   }
    render() {
      return (
        <div className="container">
          <Header />
          <AddTask newTask={this.addTaskToList} />
          <TaskCounter count={this.state.tasks.length} />
-         <TaskList tasks={this.state.tasks} deleteTaskFunc={this.deleteTask} id={this.Id}
-         completeTaskFunc={this.completeTask} />
+         <TaskList tasks={this.state.tasks} deleteTaskFunc={this.deleteTask} id={this.Id} />
   </div>
  
      );
    }
  }
  export default App;
+ 
