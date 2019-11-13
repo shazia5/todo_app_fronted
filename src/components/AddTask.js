@@ -1,35 +1,24 @@
- 
 import React from "react";
-const uuidv4 = require('uuid/v4');
-
-
+const uuidv4 = require('uuid/v4')
 class AddTask extends React.Component {
-
   state = {
     taskDescription: ""
   }
-  
   addTask = () => {
     const task = {
-        id: uuidv4,
-        taskDescription: this.state.taskDescription,
-        completed: false
+      id: uuidv4(),
+      taskDescription: this.state.taskDescription,
+      completed: false
     }
-if(this.state)
     this.props.newTask(task);
-
-    
-    this.setState({taskDescription: ""});
+    this.setState({ taskDescription: "" });
   }
-
   taskDescriptionChanged = (event) => {
     let taskDescription = this.state.taskDescription;
-
     taskDescription = event.target.value;
+    this.setState({ taskDescription });
 
-    this.setState({taskDescription});
   }
-
   render() {
     return (
       <div className="row">
@@ -37,18 +26,20 @@ if(this.state)
           <input
             className="form-control"
             type="text"
+            id="addTask"
             placeholder="What do you want to do..."
             value={this.state.taskDescription}
-            onChange={this.taskDescriptionChanged}></input>
+            onChange={this.taskDescriptionChanged}
+          />
         </div>
         <div className="col-12 col-md-2">
           <button type="button" className="btn btn-success" onClick={this.addTask}>
-            CREATE
-          </button>
+            Create
+             </button>
         </div>
       </div>
     );
   }
 }
-
 export default AddTask;
+

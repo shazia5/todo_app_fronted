@@ -1,74 +1,66 @@
-
-
-  import React from 'react';
-  import './App.css';
-  import Header from './components/Header';
-  import AddTask from './components/AddTask';
-  import TaskCounter from './components/TaskCounter';
-  import TaskList from './components/TaskList';
-  import Footer from './components/Footer';
+   
+ import React from 'react';
+ import './App.css';
+ import Header from './components/Header';
+ import TaskCounter from './components/TaskCounter';
+ import TaskList from './components/TaskList';
+ import AddTask from './components/AddTask';
+ const uuidv4 = require('uuid/v4');
+ 
+ 
+ class App extends React.Component {
+   constructor(props) {
+     super(props);
+     this.state = {
+       tasks: [
+         { id: uuidv4(), taskDescription: "Distribution of catalogue", completed: false },
+         { id: uuidv4(), taskDescription: "Collection of catalogue", completed: true },
+         { id: uuidv4(), taskDescription: "Update and submit order", completed: false },
+         { id: uuidv4(), taskDescription: "prepare individual order", completed: true },
+         { id: uuidv4(), taskDescription: "Pay the invoice", completed: false },
+         { id: uuidv4(), taskDescription: "check calender dates", completed: false }
+       ]
+     };
+   }
+   addTaskToList = (task) => {
+     let tasks = this.state.tasks;
+     tasks.push(task);
+     this.setState({ tasks: tasks });
+   }
   
-  
-  const uuidv4 = require('uuid/v4');
-  
-  
-  class App extends React.Component {
-  
-    state = {
-      tasks: [ 
-        {id: uuidv4(), taskDescription: "Buy milk", completed: false},
-        {id: uuidv4(), taskDescription: "Walk dog", completed: true},
-        {id: uuidv4(), taskDescription: "Make GP appointment", completed: false},
-        {id: uuidv4(), taskDescription: "get some groceries", completed: true},
-      ]
-    }
-  
-  addTaskToList = (task) => {
-      let tasks = this.state.tasks;
-      tasks.push(task);
-      this.setState({tasks: tasks});
- }
-  
-  deleteTask = (taskId) => {
-    alert(`App will delete task ${taskId}`);
-      console.log(taskId)
-  // This will be an array of tasks that are in state
-      let tasks = this.state.tasks;
-      let filteredTasks = tasks.filter(function(task) {
-        return (task.id !== taskId)
+   deleteTask = (taskId) => {
+   let tasks = this.state.tasks;
+   let filteredTasks = tasks.filter(function (task) {
+       return task.id !== taskId;
  });
-       this.setState({tasks: filteredTasks});
+     this.setState({ tasks: filteredTasks
+ });
 }
-    markTaskChecked = (taskId) =>{
-        this.setState(prevState => {
-                  const completedTask = prevState.state.tasks.map(task => {
-                      if (task.id === taskId) {
-                        return {
-                   ...task,
-                         completed: !task.completed
-         } 
-       }
-                  return task
-              })          
-               return {
-                   tasks: completedTask
-     }  
-  })                
+
+    completeTask = (taskId) => {
+     let tasks = this.state.tasks;
+      let filteredTasks = tasks.filter(function (task) {
+         return task.id !== taskId;
+});
+      this.setState({ tasks: filteredTasks
+});
 }
-  
-    render() {
-      return (
-        <div className="container">
-          <Header />
-          <AddTask newTask={this.addTaskToList} />
-          <TaskCounter count={this.state.tasks.length} />
-          <br />
-          <TaskList tasks=
-          {this.state.tasks} deleteTaskFunc={this.deleteTask}taskCompletedFun={this.taskCompleted} />
-          <Footer />
-        </div>
-      );
-    }
-  }
-  
-  export default App;
+
+
+
+
+
+   render() {
+     return (
+       <div className="container">
+         <Header />
+         <AddTask newTask={this.addTaskToList} />
+         <TaskCounter count={this.state.tasks.length} />
+         <TaskList tasks={this.state.tasks} deleteTaskFunc={this.deleteTask} id={this.Id}
+         completeTaskFunc={this.completeTask} />
+  </div>
+ 
+     );
+   }
+ }
+ export default App;

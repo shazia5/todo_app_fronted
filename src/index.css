@@ -62,8 +62,13 @@
 
   font-style: italic;
   font-size-adjust: initial;
+  
 
+}
 
+.btn-size{
+  width: 100px;
+ 
 }
 
 
