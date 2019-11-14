@@ -4,6 +4,7 @@ import Header from './components/Header';
 import TaskCounter from './components/TaskCounter';
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTask';
+import Footer from './components/Footer';
 const uuidv4 = require('uuid/v4');
 class App extends React.Component {
  constructor(props) {
@@ -26,20 +27,52 @@ class App extends React.Component {
  }
  deleteTask = (taskId) => {
    let tasks = this.state.tasks;
-   let filteredTasks = tasks.filter(function (task) {
+   let taskToKeep = tasks.filter(function (task) {
      return task.id !== taskId;
    });
-   this.setState({ tasks: filteredTasks });
- }
+   this.setState({ tasks: taskToKeep});
+ 
+//  markTaskAsCompleted = (taskId) => {
+   
+  this.handleChange = this.handleChange.bind(this)
+ }
+handleChange(id) {
+          this.setState(prevState => {
+              const updatedTasks = prevState.tasks.map(task => {
+    
+      if (task.id === Id) {
+      return {
+
+        ...task,
+        completed:!task.markTaskAsCompleted
+      }
+    }
+    return task
+  })
+  return{
+    tasks:updatedTasks
+
+  }
+    })
+  }
+  
  render() {
-   return (
+   
+    return (
      <div className="container">
        <Header />
        <AddTask newTask={this.addTaskToList} />
        <TaskCounter count={this.state.tasks.length} />
-       <TaskList tasks={this.state.tasks} deleteTaskFunc={this.deleteTask} id={this.Id} />
+       <TaskList 
+       tasks={this.state.tasks} deleteTaskFunc={this.deleteTask} id={this.Id} 
+       // eslint-disable-next-line react/jsx-no-duplicate-props
+       tasks={this.state.tasks}completeTaskFunc={this.completeTask}id=
+       {this.id} />
+       <Footer />
 </div>
-   );
+    
+);
+    
  }
 }
 export default App;

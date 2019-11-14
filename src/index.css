@@ -57,12 +57,12 @@
 
   font-style: italic;
   font-size-adjust: initial;
+  }
   
 
-}
-
 .btn-size{
-  width: 100px;
+  width: 100px; 
+  background-color: rgb(54, 27, 17);
  
 }
 
