@@ -14,9 +14,7 @@ class App extends React.Component {
        { id: uuidv4(), taskDescription: "Order inhalers", completed: false },
        { id: uuidv4(), taskDescription: "Complete shopping", completed: true },
        { id: uuidv4(), taskDescription: "Book flights", completed: false },
-       { id: uuidv4(), taskDescription: "Complete CV", completed: true },
-       { id: uuidv4(), taskDescription: "Pay the credit card", completed: false },
-       { id: uuidv4(), taskDescription: "change energy suppliers", completed: false }
+      
      ]
    };
  }
@@ -32,7 +30,7 @@ class App extends React.Component {
    });
    this.setState({ tasks: taskToKeep});
  
-//  markTaskAsCompleted = (taskId) => {
+
    
   this.handleChange = this.handleChange.bind(this)
  }
@@ -40,11 +38,11 @@ handleChange(id) {
           this.setState(prevState => {
               const updatedTasks = prevState.tasks.map(task => {
     
-      if (task.id === Id) {
+      if (task.id === id) {
       return {
 
         ...task,
-        completed:!task.markTaskAsCompleted
+        completed:!task.completed
       }
     }
     return task
@@ -57,22 +55,24 @@ handleChange(id) {
   }
   
  render() {
-   
-    return (
+  //  const task = this.state.tasks.map(item => <TaskList key={item.id} item={item} handleChange={this.handleChange}/>)
+      
+      return (
+      
+    
      <div className="container">
        <Header />
        <AddTask newTask={this.addTaskToList} />
        <TaskCounter count={this.state.tasks.length} />
        <TaskList 
        tasks={this.state.tasks} deleteTaskFunc={this.deleteTask} id={this.Id} 
-       // eslint-disable-next-line react/jsx-no-duplicate-props
-       tasks={this.state.tasks}completeTaskFunc={this.completeTask}id=
-       {this.id} />
+       />)
        <Footer />
-</div>
-    
-);
-    
- }
+   </div>
+    );
+  }
 }
+    
+ 
+
 export default App;
