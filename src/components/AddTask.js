@@ -33,7 +33,7 @@ class AddTask extends React.Component {
        </div>
        <div className="col-12 col-md-2">
          <button type="button" className="btn btn-success" onClick={this.addTask}>
-           create
+           Create
         </button>
        </div>
      </div>

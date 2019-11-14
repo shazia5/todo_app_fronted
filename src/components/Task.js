@@ -29,7 +29,7 @@ class Task extends React.Component {
                </div>
                <div>
                    <div className="col-6 col-md-3">
-                       <button type="button" className="btn btn-danger" onClick={this.deleteTask}>
+                       <button type="button" className="btn btn-danger btn-sm m-1 btn-size" onClick={this.deleteTask}>
                            Delete
                    </button>
                    </div>
