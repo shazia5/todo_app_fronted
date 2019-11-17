@@ -4,7 +4,7 @@ import Header from './components/Header';
 import TaskCounter from './components/TaskCounter';
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTask';
-import Footer from './components/Footer';
+import  Footer from './components/Footer';
 const uuidv4 = require('uuid/v4');
 class App extends React.Component {
  constructor(props) {
@@ -25,49 +25,32 @@ class App extends React.Component {
  }
  deleteTask = (taskId) => {
    let tasks = this.state.tasks;
-   let taskToKeep = tasks.filter(function (task) {
+   let filteredTask = tasks.filter(function (task) {
      return task.id !== taskId;
    });
-   this.setState({ tasks: taskToKeep});
- 
-
-   
-  this.handleChange = this.handleChange.bind(this)
- }
-handleChange(id) {
-          this.setState(prevState => {
-              const updatedTasks = prevState.tasks.map(task => {
-    
-      if (task.id === id) {
-      return {
-
-        ...task,
-        completed:!task.completed
+   this.setState({ tasks: filteredTask});
+  }
+   completeTask = (taskId) => {
+    const completeTask = this.state.tasks.map(task => {
+      if (task.id === taskId) {
+        task.completed = true
       }
-    }
-    return task
-  })
-  return{
-    tasks:updatedTasks
-
+      return task;
+    });
+    this.setState({ tasks: completeTask })
   }
-    })
-  }
-  
  render() {
-  //  const task = this.state.tasks.map(item => <TaskList key={item.id} item={item} handleChange={this.handleChange}/>)
-      
-      return (
-      
-    
-     <div className="container">
+ return (
+      <div className="container">
        <Header />
        <AddTask newTask={this.addTaskToList} />
        <TaskCounter count={this.state.tasks.length} />
        <TaskList 
-       tasks={this.state.tasks} deleteTaskFunc={this.deleteTask} id={this.Id} 
-       />)
-       <Footer />
+       tasks={this.state.tasks}completeTaskFunc={this.completeTask} deleteTaskFunc={this.deleteTask} />
+      <Footer />
+        
+      
+    
    </div>
     );
   }

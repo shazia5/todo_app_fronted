@@ -1,0 +1,30 @@
+To start open rds and then database
+need to coppy endpoint 
+go to terminal 
+write 
+mysql -u AAI -p -h (paste what we coppied from endpoint) 
+hit enter
+enter pasword
+now enter comand 
+show databases;(always use ; otherwise not gonna work)
+you ll see standard database
+TO CREATE 
+put command 
+mysql create database mytodolist;
+enter 
+again show databases ;
+you ll be able to see mytodolist .
+
+CREATE TABLE team (teamId BIGINT(20)AUTO_INCREMENT, name VARCHAR(20), colour VARCHAR(20), PRIMARY KEY (teamId));
+mysql> SHOW TABLES;
+mysql> SELECT * FROM team;
+mysql> INSERT INTO team (teamId, name, colour) Values (1, 'Yellow Team', 'Yellow');
+if you want to start then first put these commands
+sudo apt install mysql-server
+mysql --version
+mysql> show databases
+mysql> CREATE houseworks
+mysql> show databases;
+mysql> use houseworks;
+mysql> show tables;
+then the above commands
