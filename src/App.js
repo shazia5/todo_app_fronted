@@ -14,6 +14,8 @@ class App extends React.Component {
        { id: uuidv4(), taskDescription: "Order inhalers", completed: false },
        { id: uuidv4(), taskDescription: "Complete shopping", completed: true },
        { id: uuidv4(), taskDescription: "Book flights", completed: false },
+       { id: uuidv4(), taskDescription: "Iman's PTA @ 6 pm", completed: true },
+       { id: uuidv4(), taskDescription: "pick up the prescription", completed: false },
       
      ]
    };
@@ -44,7 +46,9 @@ class App extends React.Component {
       <div className="container">
        <Header />
        <AddTask newTask={this.addTaskToList} />
+       <br />
        <TaskCounter count={this.state.tasks.length} />
+       <br />
        <TaskList 
        tasks={this.state.tasks}completeTaskFunc={this.completeTask} deleteTaskFunc={this.deleteTask} />
       <Footer />
