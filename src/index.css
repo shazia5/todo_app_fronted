@@ -53,6 +53,12 @@
   font-style: oblique;
 
 }
+
+.Task-Counter {
+  font-style: oblique;
+   background-color: black; 
+}
+
 .button{
 
   font-style: italic;
@@ -65,7 +71,12 @@
   background-color: rgb(54, 27, 17);
  
 }
-.TaskCounter{
+
+
+
+
+
+/* .TaskCounter{
   font-style: italic;
   color: aquamarine; 
- }
+ } */

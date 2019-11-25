@@ -11,11 +11,11 @@ class App extends React.Component {
    super(props);
    this.state = {
      tasks: [
-       { id: uuidv4(), taskDescription: "Order inhalers", completed: false },
-       { id: uuidv4(), taskDescription: "Complete shopping", completed: true },
-       { id: uuidv4(), taskDescription: "Book flights", completed: false },
-       { id: uuidv4(), taskDescription: "Iman's PTA @ 6 pm", completed: true },
-       { id: uuidv4(), taskDescription: "pick up the prescription", completed: false },
+       { id: uuidv4(), taskDescription: "Order inhalers", completed: false,Date:"2019-11-19"},
+       { id: uuidv4(), taskDescription: "Buy bread", completed: true, Date:"2019-11-20"},
+       { id: uuidv4(), taskDescription: "Buy milk", completed: false,Date:"2019-11-19" },
+       { id: uuidv4(), taskDescription: "Iman's PTA @ 6 pm", completed: true,Date:"2019-11-19" },
+       { id: uuidv4(), taskDescription: "pick up the prescription", completed: false,Date:"2019-11-19" },
       
      ]
    };
@@ -46,7 +46,7 @@ class App extends React.Component {
       <div className="container">
        <Header />
        <AddTask newTask={this.addTaskToList} />
-       <br />
+       
        <TaskCounter count={this.state.tasks.length} />
        <br />
        <TaskList 
