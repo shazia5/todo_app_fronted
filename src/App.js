@@ -1,20 +1,25 @@
 import React from 'react';
 import './App.css';
+
 import Header from './components/Header';
 import TaskCounter from './components/TaskCounter';
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTask';
 import  Footer from './components/Footer';
 const uuidv4 = require('uuid/v4');
+const moment = require('moment');
+
+
+
 class App extends React.Component {
  constructor(props) {
    super(props);
    this.state = {
      tasks: [
-       { id: uuidv4(), taskDescription: "Order inhalers", completed: false,Date:"2019-11-19"},
+       { id: uuidv4(), taskDescription: "Order inhalers", completed: false,dateDue: moment().add(2, 'days').format("YYYY-MM-DD"), dateDone: ""},
        { id: uuidv4(), taskDescription: "Buy bread", completed: true, Date:"2019-11-20"},
        { id: uuidv4(), taskDescription: "Buy milk", completed: false,Date:"2019-11-19" },
-       { id: uuidv4(), taskDescription: "Iman's PTA @ 6 pm", completed: true,Date:"2019-11-19" },
+       { id: uuidv4(), taskDescription: "Iman's PTA @ 6 pm", completed: true, dateDue: moment().add(3, 'days').format("YYYY-MM-DD"), dateDone: "", },
        { id: uuidv4(), taskDescription: "pick up the prescription", completed: false,Date:"2019-11-19" },
       
      ]
@@ -44,9 +49,10 @@ class App extends React.Component {
  render() {
  return (
       <div className="container">
-     
-      <Header />
+      <h4>  ({moment().format("ddd Do MMM")})add a calendar </h4>
       <br />
+       <Header />
+      
        <AddTask newTask={this.addTaskToList} />
        
        <TaskCounter count={this.state.tasks.length} />

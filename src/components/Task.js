@@ -1,6 +1,5 @@
 import React from 'react';
-//import AddTask from 'react';
-//const uuidv4 = require('uuid/v4');
+
 class Task extends React.Component {
    deleteTask = () => {
        this.props.deleteTaskFunc(this.props.task.id);
