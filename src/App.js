@@ -46,19 +46,37 @@ class App extends React.Component {
     });
     this.setState({ tasks: completeTask })
   }
+  editTask = (newTask) => {
+    let tasks = this.state.tasks.slice();
+    tasks.forEach(task =>{
+      if (task.id === newTask) {
+      task.edited = true
+    }
+    return newTask;
+  });
+    this.setState({ tasks: tasks });
+    
+  }
+
+   
+  
  render() {
  return (
       <div className="container">
-      <h4>  ({moment().format("ddd Do MMM")})add a calendar </h4>
-      <br />
+      <h4>  ({moment().format("dddd Do MMMM")}) </h4>
+      <hr />
+      
        <Header />
       
        <AddTask newTask={this.addTaskToList} />
-       
+       <hr />
        <TaskCounter count={this.state.tasks.length} />
-       <br />
+       <hr />
        <TaskList 
-       tasks={this.state.tasks}completeTaskFunc={this.completeTask} deleteTaskFunc={this.deleteTask} />
+       tasks={this.state.tasks}completeTaskFunc={this.completeTask} deleteTaskFunc={this.deleteTask} 
+       editTaskFunc={this.editTask}
+       />
+       <hr />
       <Footer />
         
       

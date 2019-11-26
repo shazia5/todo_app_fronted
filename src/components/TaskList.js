@@ -7,6 +7,8 @@ render() {
       {this.props.tasks.map((task, index) => {
          return <Task 
          deleteTaskFunc={this.props.deleteTaskFunc} completeTaskFunc={this.props.completeTaskFunc}
+         editTaskFunc=
+         {this.props.editTaskFunc}
          task={task} key={index} />;
       })
       }

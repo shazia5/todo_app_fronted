@@ -6,35 +6,48 @@ class Task extends React.Component {
    }
    completeTask = () => {
        this.props.completeTaskFunc(this.props.task.id)
+   }   
+   editTask =() => {
+       this.props.editTaskFunc(this.props.task.id)
    }
    render() {
        const completed=this.props.task.completed
+      
     return (
         <div className="row taskrow">
-            {completed &&
+            {completed && 
+            
+                
                 <div className="col-12 col-md-6 completedTask">
                     {this.props.task.taskDescription}
-                </div>
+            </div>
             }
-            {!completed &&
+            {!completed && 
                 <div className="col-12 col-md-6">
                     {this.props.task.taskDescription}
-                </div>
+            </div>
             }
-            <div className="col-6 col-md-3">
+            <div className="col-4 col-md-2">
                 <button type="button" className="btn btn-primary btn btn-sm m-1" onClick={this.completeTask}>
                     Done
-                        </button>
+                 </button>
             </div>
-            <div>
-                <div className="col-6 col-md-3">
+        <div>
+            <div className="col-4 col-md-2">
                     <button type="button" className="btn btn-danger btn btn-sm m-1-size" onClick={this.deleteTask}>
                         Delete
                 </button>
-                </div>
             </div>
         </div>
-    );
-}
+           <div className="col-4 col-md-2">
+                    <button type="button" className="btn btn-primary btn btn-sm m-1-size" onClick={this.editTask}>
+                        Edit
+                </button>
+            </div>
+        </div>
+    
+
+  );
+ }
 }
 export default Task;
