@@ -29,13 +29,13 @@ class Task extends React.Component {
                 }
                 <div className="col-4 col-md-2">
                     <button type="button" className="btn btn-warning btn btn-sm m-1" onClick={this.completeTask}>
-                        Done
+                        done
             </button>
                 </div>
                 <div>
                     <div className="col-4 col-md-2">
                         <button type="button" className="btn btn-danger btn btn-sm m-1" onClick={this.deleteTask}>
-                            Delete
+                            Del
                 </button>
                     </div>
                 </div>

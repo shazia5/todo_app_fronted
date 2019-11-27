@@ -46,7 +46,7 @@ class App extends React.Component {
     });
     this.setState({ tasks: completeTask })
   }
-  editTask = (taskd, newTask) => {
+  editTask = (taskid, newTask) => {
     let tasks = this.state.tasks.slice();
     tasks.forEach(task => {
       if (task.id === newTask) {
@@ -63,8 +63,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h4>  ({moment().format("dddd Do MMMM")}) </h4>
-        <hr />
+        <h4>  ({moment().format ("dddd Do MMMM" )}) </h4>
         <Header />
         <AddTask newTask={this.addTaskToList} />
         <hr />

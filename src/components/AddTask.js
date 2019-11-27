@@ -33,8 +33,8 @@
           />
         </div>
         <div className="col-12 col-md-2">
-          <button type="button" className="btn btn-success" onClick={this.addTask}>
-            CREATE
+          <button type="button" className="btn btn-success btn btn-xs" onClick={this.addTask}>
+            +
          </button>
         </div>
       </div>
