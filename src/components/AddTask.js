@@ -24,7 +24,7 @@
       <div className="row">
         <div className="col-12 col-md-10">
           <input
-            className="form-control"
+            className="form-control size=sm"
             type="text"
             id="addTask"
             placeholder="What do you want to do..."

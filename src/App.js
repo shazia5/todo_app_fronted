@@ -9,6 +9,8 @@ import Footer from './components/Footer';
 const uuidv4 = require('uuid/v4');
 const moment = require('moment');
 
+// const myDate = moment().format("YYYY-MM-DD")
+
 
 
 class App extends React.Component {
@@ -16,11 +18,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       tasks: [
-        { id: uuidv4(), taskDescription: "Order inhalers", completed: false, dateDue: moment().add(2, 'days').format("YYYY-MM-DD"), dateDone: "" },
+        { id: uuidv4(), taskDescription: "Order inhalers", completed: false, createdDate: moment().add(2, 'days').format("YYYY-MM-DD"), dateDone: "" },
         { id: uuidv4(), taskDescription: "Buy bread", completed: true, Date: "2019-11-20" },
         { id: uuidv4(), taskDescription: "Buy milk", completed: false, Date: "2019-11-19" },
-        { id: uuidv4(), taskDescription: "Iman's PTA @ 6 pm", completed: true, dateCreated: moment().add(3, 'days').format("YYYY-MM-DD"), dateDone: "", },
-        { id: uuidv4(), taskDescription: "pick up the prescription", completed: false, Date: "2019-11-19" },
+        { id: uuidv4(), taskDescription: "Iman's PTA @ 6 pm", completed: false, dateCreated: moment().add(3, 'days').format("YYYY-MM-DD"), dateDone: "", },
+     
 
       ]
     };
@@ -63,7 +65,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h4>  ({moment().format ("dddd Do MMMM" )}) </h4>
+        <h6>  ({moment().format ("dddd Do MMMM" )}) </h6>
         <Header />
         <AddTask newTask={this.addTaskToList} />
         <hr />

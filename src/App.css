@@ -1,21 +1,21 @@
 .App{
-  background-color:rgb(169, 190, 216);
-  min-height:600px;
-  width: 500px;
+  background-color:lightgray;
+  min-height:400px;
+  width: 450px;
   margin: 40px auto;
-  text-align: left;
+  text-align: center;
   padding: 20px;
   box-shadow:
   /* The top layer shadow */
-      0 1px 1px rgba(0,0,0,0.15),
+      0 20px 1px rgba(122, 49, 77, 0.15),
           /* The second layer */
-      0 10px 0 -5px #eee,
+      0 10px 0 -5px greenyellow,
           /* The second layer shadow */
-      0 10px 1px -4px rgba(0,0,0,0.15),
+      0 20px 1px -4px rgba(0,0,0,0.15),
           /* The third layer */
-      0 20px 0 -10px #eee,
+      0 20px 0 -10px darkgreen,
           /* The third layer shadow */
-      0 20px 1px -9px rgba(0,0,0,0.15);
+      0 20px 1px -9px rgba(143, 42, 146, 0.15);
   }
 
 .App {
@@ -26,6 +26,7 @@
   font-stretch: normal; 
   font-feature-settings: normal;
   font-weight: 300;
+  font-size:10px;
 }
 
 
@@ -33,20 +34,8 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #09d3ac;
-}
+
 
 .taskRow {
   padding-top: 10px;
