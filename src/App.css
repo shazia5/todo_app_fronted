@@ -1,5 +1,5 @@
 .App{
-  background-color:grey;
+  background-color:lightgray;
   min-height:600px;
   width: 500px;
   margin: 40px auto;
@@ -9,6 +9,12 @@
 
 .App {
   text-align: center;
+  font-size: inherit;
+  font-family: sans-serif;
+  font-style:italic ;
+  font-stretch: normal; 
+  font-feature-settings: normal;
+  font-weight: 300;
 }
 
 .App-logo {
@@ -42,9 +48,11 @@
 .button{
   font-style:small;
   color-adjust: black;
-
-
-  }
+    font-style: italic;
+    font-size-adjust: initial;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+ 
 
 
 
