@@ -25,11 +25,11 @@ ALTER TABLE task ADD FOREIGN KEY (userId) REFERENCES user(userId);
 USE task
 INSERT INTO task (id, taskDescription, completed, creationDate, userId) VALUES ("001", "Buy milk ", "false", "2019-11-16", "1");
 
-INSERT INTO task (id, taskDescription, completed, creationDate, userId) VALUES ("002", "Iman's PTA @ 6 pm", "false", "2019-11-16", "1");
+INSERT INTO task (id, taskDescription, completed, creationDate, userId) VALUES ("002", "Buy bread @ 6 pm", "false", "2019-11-16", "1");
 
-INSERT INTO task (id, taskDescription, completed, creationDate, userId) VALUES ("003", "Pickup prescription", "false", "2019-11-15", "1");
+INSERT INTO task (id, taskDescription, completed, creationDate, userId) VALUES ("003", "Order inhaler", "false", "2019-11-15", "1");
 
-INSERT INTO task (id, taskDescription, completed, creationDate, userId) VALUES ("004", "Order Inhaler", "false", "2019-11-16", "2");
+INSERT INTO task (id, taskDescription, completed, creationDate, userId) VALUES ("004", "Arryan's PTA @ 6PM", "false", "2019-11-16", "2");
 
 SELECT * FROM task;
 

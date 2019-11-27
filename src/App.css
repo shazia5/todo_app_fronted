@@ -1,3 +1,15 @@
+.App{
+  background-color: #51467A;
+  min-height:600px;
+  width: 400px;
+  margin: 40px auto;
+  text-align: left;
+  padding: 20px;
+  }
+
+
+
+
 .App {
   text-align: center;
 }
@@ -28,11 +40,16 @@
 }
 .completedTask {
   text-decoration: line-through;
+
 }
 .button{
   font-style:small;
- 
-}
+  color-adjust: black;
+
+
+  }
+
+
 
 
 
