@@ -22,7 +22,7 @@
   render() {
     return (
       <div className="row">
-        <div className="col-12 col-md-10">
+        <div className="col-10 col-md-12 col-md-12">
           <input
             className="form-control form-control-sm"
             type="text"
@@ -32,7 +32,7 @@
             onChange={this.taskDescriptionChanged}
           />
         </div>
-        <div className="col-12 col-md-2">
+        <div className="col-2 col-md-12 col-lg-12">
           <button type="button" className="btn btn-success btn btn-xs" onClick={this.addTask}>
             +
          </button>

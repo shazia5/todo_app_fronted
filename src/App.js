@@ -19,9 +19,9 @@ class App extends React.Component {
     this.state = {
       tasks: [
         { id: uuidv4(), taskDescription: "Order inhalers", completed: false, createdDate: moment().add(2, 'days').format("YYYY-MM-DD"), dateDone: "" },
-        { id: uuidv4(), taskDescription: "Buy bread", completed: true, Date: "2019-11-20" },
         { id: uuidv4(), taskDescription: "Buy milk", completed: false, Date: "2019-11-19" },
         { id: uuidv4(), taskDescription: "Iman's PTA @ 6 pm", completed: false, dateCreated: moment().add(3, 'days').format("YYYY-MM-DD"), dateDone: "", },
+        { id: uuidv4(), taskDescription: "Arryans's orthodontist apppintment @ 10 am", completed: true, dateCreated: moment().add(3, 'days').format("YYYY-MM-DD"), dateDone: "", },
      
 
       ]

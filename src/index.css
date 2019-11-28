@@ -22,7 +22,7 @@
     @media only screen and (max-width: 600px) {
       body {
         background-color: lightblue;
-        color:blue
+        color:white
       }
     }
 
@@ -33,7 +33,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
-
+.h6{
+  font-weight:bold;
+}
 .code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -53,16 +55,20 @@
   font-style: oblique;
 
 }
-.button{
+/* .button{
   font-style: italic;
   font-size-adjust: initial;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  }
+  } */
   
-
+.btn{
+  font-family:"Times New Roman", Times, serif;
+  font-size:4px;
+ 
+}
 .btn-size{
-  width: 50px; 
-  background-color: rgb(54, 27, 17);
+  width: 30px; 
+  background-color:black(54, 27, 17)
  
 }
 .img {
@@ -71,3 +77,4 @@
 .h4 {font-size: 15px;
 
 }
+
