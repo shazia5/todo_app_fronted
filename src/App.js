@@ -48,7 +48,7 @@ class App extends React.Component {
     });
     this.setState({ tasks: completeTask })
   }
-  editTask = (taskid, newTask) => {
+  editTask = (id, newTask) => {
     let tasks = this.state.tasks.slice();
     tasks.forEach(task => {
       if (task.id === newTask) {

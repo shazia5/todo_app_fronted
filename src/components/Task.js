@@ -8,39 +8,41 @@ class Task extends React.Component {
         this.props.completeTaskFunc(this.props.task.id)
     }
     editTask = () => {
-        this.props.editTaskFunc(this.props.task.id)
+        const newTask =prompt('update task detail',this.props.task)
+        this.props.editTaskFunc(this.props.task.id,newTask,)
     }
     render() {
         const completed = this.props.task.completed
-         
+        //  const edited =
+        //  this.props.task.edited
         return (
             <div className="row taskrow">
                 {completed && 
 
 
-                    <div className="col-12 col-md-6 col-sm-12 completedTask">
+                    <div className="col-12 col-sm-12 col-md-12 completedTask">
                         {this.props.task.taskDescription}
                     </div>
                 }
                 {!completed && 
-                    <div className="col-12 col-md-6 col-sm-12">
+                    <div className="col-12 col-sm-12 col-md-12">
                         {this.props.task.taskDescription}
                     </div>
                 }
-                <div className="col-4 col-md-4 col-sm-4">
-                    <button type="button" className="btn btn-warning btn btn-sm m-1" onClick={this.completeTask}>
+                <div className="col-4 col-sm-4 col-md-4">
+                    <button type="button" className="btn btn-outline-success btn btn-sm m-1" onClick={this.completeTask}>
                         Done
             </button>
                 </div>
                 <div>
-                    <div className="col-4 col-md-4 col-sm-4">
-                        <button type="button" className="btn btn-danger btn btn-sm m-1" onClick={this.deleteTask}>
-                            Del
+                    <div className="col-4 col-sm-4 col-md-4">
+                        <button type="button" className="btn btn-outline-danger btn btn-sm m-1" onClick={this.deleteTask}>
+                            Delete
                 </button>
                     </div>
                 </div>
-                <div className="col-4 col-md-4 col-sm-4">
-                    <button type="button" className="btn btn-primary btn btn-sm m-1" onClick={this.editTask}>
+                <div className="col-4 col-sm-4 col-md-4">
+                    <button type="button" className="btn btn-outline-primary btn btn-sm m-1" onClick={this.editTask}>
                         Edit
                 </button>
                 </div>
