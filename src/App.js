@@ -19,7 +19,8 @@ class App extends React.Component {
     this.state = {
       tasks: [
         { id: uuidv4(), taskDescription: "Order inhalers", completed: false, createdDate: moment().add(2, 'days').format("YYYY-MM-DD"), dateDone: "" },
-        { id: uuidv4(), taskDescription: "Buy milk", completed: false, Date: "2019-11-19" },
+        
+{ id: uuidv4(), taskDescription: "Buy milk", completed: false, Date: "2019-11-19" },
         { id: uuidv4(), taskDescription: "Iman's PTA @ 6 pm", completed: false, dateCreated: moment().add(3, 'days').format("YYYY-MM-DD"), dateDone: "", },
         { id: uuidv4(), taskDescription: "Arryans's orthodontist apppintment @ 10 am", completed: true, dateCreated: moment().add(3, 'days').format("YYYY-MM-DD"), dateDone: "", },
      
@@ -32,6 +33,9 @@ class App extends React.Component {
     tasks.push(task);
     this.setState({ tasks: tasks });
   }
+  
+  
+  
   deleteTask = (taskId) => {
     let tasks = this.state.tasks;
     let filteredTask = tasks.filter(function (task) {
@@ -48,15 +52,15 @@ class App extends React.Component {
     });
     this.setState({ tasks: completeTask })
   }
-  editTask = (id, newTask) => {
-    let tasks = this.state.tasks.slice();
-    tasks.forEach(task => {
-      if (task.id === newTask) {
-        task.edited = true
+  editTask = (id, newTaskDescription) => {
+    const tasksCopy = this.state.tasks.slice();
+    tasksCopy.forEach(task => {
+      if (task.id=== id) {
+        task.taskDescription = newTaskDescription
       }
-      return newTask;
+      
     });
-    this.setState({ tasks: newTask });
+    this.setState({ tasks: tasksCopy });
 
   }
 
