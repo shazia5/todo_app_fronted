@@ -35,11 +35,7 @@
 .App-logo {
   height: 40vmin;
 }
-.taskRow {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-top: 2px solid grey;
-}
+
 .completedTask {
   text-decoration: line-through;
   lighting-color: tomato;
