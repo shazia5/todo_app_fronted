@@ -8,8 +8,8 @@ class Task extends React.Component {
         this.props.completeTaskFunc(this.props.task.id)
     }
     editTask = () => {
-        var newTaskDescription = prompt('Update task', this.props.task);
-        this.props.editTaskFunc(this.props.id, newTaskDescription)
+        var newTaskDescription = prompt('Update task', this.props.task.taskDescription);
+        this.props.editTaskFunc(this.props.task.id, newTaskDescription)
     }
     render() {
         const completed = this.props.task.completed

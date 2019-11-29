@@ -55,6 +55,7 @@ class App extends React.Component {
     this.setState({ tasks: completeTask })
   }
   editTask = (id, newTaskDescription) => { 
+    console.log(id,newTaskDescription);
     if (newTaskDescription === "") {
       
       return;
@@ -66,6 +67,7 @@ class App extends React.Component {
       }
       
     });
+    console.log (tasksCopy);
     this.setState({ tasks: tasksCopy });
 
   }
@@ -83,7 +85,7 @@ markTaskAsActive = (taskId) => {
   render() {
     return (
       <div className="App">
-      <i class="fas fa-calendar-alt">
+      <i className="fas fa-calendar-alt">
       </i>
 <h6>  ({moment().format ("dddd Do MMMM" )}) </h6>
         <Header />
