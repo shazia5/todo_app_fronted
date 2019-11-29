@@ -8,8 +8,8 @@ class Task extends React.Component {
         this.props.completeTaskFunc(this.props.task.id)
     }
     editTask = () => {
-        var newText = prompt('Update task details', this.props.task);
-        this.props.editTaskFunc(this.props.id, newText)
+        var newTaskDescription = prompt('Update task', this.props.task);
+        this.props.editTaskFunc(this.props.id, newTaskDescription)
     }
     render() {
         const completed = this.props.task.completed
@@ -19,33 +19,33 @@ class Task extends React.Component {
                 {completed &&
 
 
-                    <div className="col-12 col-md-6 col-lg-3  completedTask">
+                    <div className="col-12 col-md-6 col-lg-6  completedTask">
                         {this.props.task.taskDescription}
                     </div>
                 }
                 {!completed &&
-                    <div className="col-12  col-md-6 col-lg-3">
+                    <div className="col-12  col-md-6 col-lg-6">
                         {this.props.task.taskDescription}
                     </div>
                 }
-                <div className="col-4 col-md-2 col-lg-3 greyItalic">
+         <div className="col-4 col-md-2 col-lg-2">
                     <button type="button" className="btn btn-success btn btn-sm m-1" onClick={this.completeTask}>
                         Done
             </button>
-                </div>
-                <div>
-                    <div className="col-4 col-md-2 col-lg-3">
+        </div>
+                
+         <div className="col-4 col-md-2 col-lg-2">
                         <button type="button" className="btn btn-danger btn btn-sm m-1" onClick={this.deleteTask}>
                             Delete
-                </button>
-                    </div>
-                </div>
-                <div className="col-4 col-md-2 col-lg-3">
+             </button>
+       </div>
+            <div className="col-4 col-md-2 col-lg-2">
                     <button type="button" className="btn btn-primary btn btn-sm m-1" onClick={this.editTask}>
                         Edit
-                </button>
+                 </button>
                 </div>
             </div>
+     
         );
     }
 }

@@ -6,6 +6,8 @@ import TaskCounter from './components/TaskCounter';
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTask';
 import Footer from './components/Footer';
+
+
 const uuidv4 = require('uuid/v4');
 const moment = require('moment');
 
@@ -52,7 +54,11 @@ class App extends React.Component {
     });
     this.setState({ tasks: completeTask })
   }
-  editTask = (id, newTaskDescription) => {
+  editTask = (id, newTaskDescription) => { 
+    if (newTaskDescription === "") {
+      
+      return;
+    }
     const tasksCopy = this.state.tasks.slice();
     tasksCopy.forEach(task => {
       if (task.id=== id) {
@@ -63,13 +69,23 @@ class App extends React.Component {
     this.setState({ tasks: tasksCopy });
 
   }
-
+markTaskAsActive = (taskId) => {
+    const activeTasks = this.state.tasks.map(function (task) {
+      if (task.id === taskId) {
+        task.completed = false
+      }
+      return task
+    });
+    this.setState({ tasks: activeTasks })
+  }
 
 
   render() {
     return (
       <div className="App">
-        <h6>  ({moment().format ("dddd Do MMMM" )}) </h6>
+      <i class="fas fa-calendar-alt">
+      </i>
+<h6>  ({moment().format ("dddd Do MMMM" )}) </h6>
         <Header />
         <AddTask newTask={this.addTaskToList} />
         <hr />
