@@ -123,9 +123,8 @@ class App extends React.Component {
 <h6>  ({moment().format ("dddd Do MMMM" )}) </h6>
 </i>
         <Header />
-        <AddTask newTask={this.addTaskToList}
-        
-         />
+       
+        <AddTask newTask={this.addTaskToList}/>
         
         <TaskCounter count={this.state.tasks.length} />
         

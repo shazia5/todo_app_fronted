@@ -19,16 +19,14 @@
     }
     this.props.newTask(task);
     this.setState({ taskDescription: "" });
-  }
-    
-    
+  
     
     // this.setState({dateCreated:""});
-  
+  this.props.dateSelected(moment(e).format("YYYY-MM-DD"))
+    this.setState({dateCreated:""});
     // this.dateSelected({todaysDate: ""};
     // 3. Set the dateSelected on state to be today's date again
     
-  
   
   
   taskDescriptionChanged = (event) => {
