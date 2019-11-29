@@ -118,14 +118,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-      <i className="fas fa-calendar-alt">
-      
-<h6>  ({moment().format ("dddd Do MMMM" )}) </h6>
-</i>
+      <h6 className="fas fa-calendar-alt">
+      ({moment().format ("dddd Do MMMM" )}) 
+</h6>
         <Header />
        
         <AddTask newTask={this.addTaskToList}/>
-        
+        <hr/>
         <TaskCounter count={this.state.tasks.length} />
         
         <TaskList

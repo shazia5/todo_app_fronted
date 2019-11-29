@@ -15,7 +15,7 @@
    @media only screen and (max-width: 800px) {
       body {
         background-color:rgb(35, 37, 37);
-        color:wheat
+        color:rgb(158, 109, 17)
       }
     }
     
@@ -87,6 +87,19 @@ margin-right:5px ;
 margin-left: 5px;
   margin-inline-end: 15px;
 }
+.row{background-color: pink;
+
+}
+.form-control{background-color:white;
+  color:white;
+  font-style: bold;
+  border:4px solid black;
+  
+}
+
+  
+
+
 
 
 
