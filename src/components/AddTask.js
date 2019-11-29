@@ -18,19 +18,25 @@
       completed: false
     }
     this.props.newTask(task);
-    this.setState({dateCreated:""});
+    this.setState({ taskDescription: "" });
+  }
+    
+    
+    
+    // this.setState({dateCreated:""});
   
     // this.dateSelected({todaysDate: ""};
     // 3. Set the dateSelected on state to be today's date again
     
-  }
+  
+  
+  
   taskDescriptionChanged = (event) => {
     let taskDescription = this.state.taskDescription;
     taskDescription = event.target.value;
     this.setState({ taskDescription });
   }
-
-  handleDateChange = e => {
+   handleDateChange = e => {
     
     // console.log(e.target.value);
     // 1. update the state when this value changes
@@ -38,10 +44,10 @@
     console.log(moment(e).format("YYYY-MM-DD"))
     console.log('this is what happens when I selected date ' + e)
     this.setState({
-        selectedDate: moment(e).format("YYYY-MM-DD")
+        dateSelected: moment(e).format("YYYY-MM-DD")
     });
-  }
-  
+   
+   }
   
   render() {
     return (
@@ -56,11 +62,11 @@
             onChange={this.taskDescriptionChanged}
           />
           <input type='date'
-          value={this.state.dateSelected} className='form-control' onChange={this.handleDateChange}></input>
+          value={this.state.dateSelected} className='form-control ' onChange={this.handleDateChange}></input>
         </div>
         <div className="col-2 col-md-12 col-lg-12">
-          <button type="button" className="btn btn-success btn btn-xs" onClick={this.addTask}>
-            +
+          <button type="button" className="btn btn-success btn btn-md" onClick={this.addTask}>
+            Add
          </button>
         </div>
       </div>
