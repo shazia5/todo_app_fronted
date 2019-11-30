@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class Task extends React.Component {
     deleteTask = () => {
         this.props.deleteTaskFunc(this.props.task.id);

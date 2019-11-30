@@ -89,12 +89,14 @@ margin-left: 5px;
 }
 .row{background-color: pink;
   padding-bottom: 5px;
+  text-align: center;
 
 }
 .form-control{background-color:white;
-  color:white;
+  color:black;
   font-style: bold;
   border:4px solid black;
+  
   
 }
 
