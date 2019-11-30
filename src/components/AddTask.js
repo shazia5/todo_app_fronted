@@ -12,45 +12,37 @@
     const task = {
       id: uuidv4(),
      taskDescription:this.state.taskDescription,
-     dateSelected:this.state.dateCreated ,  
-     // 2. another property here, the dateSelected
+     dateSelected:this.state.dateCelected , 
+      // 2. another property here, the dateSelected
       // key should be dateCreated
       completed: false
     }
     this.props.newTask(task);
     this.setState({ taskDescription: "" });
-  }
-    
-    // this.setState({dateCreated:""});
-    handleClick = (event) => {
-      event.preventDefault();
-      this.props.taskDescriptionFunc(this.state.TaskDescription, this.state.dateSelected);
-      this.setState({
-          TaskDescription: ""
-      });
-  }
-    
-    // this.dateSelected({todaysDate: ""};
-    // 3. Set the dateSelected on state to be today's date again
-    
-  
-  taskDescriptionChanged = (event) => {
-    let taskDescription = this.state.taskDescription;
-    taskDescription = event.target.value;
-    this.setState({ taskDescription });
-  }
-   handleDateChange = e => {
-    
-    // console.log(e.target.value);
-    // 1. update the state when this value changes
-    console.log(e)
-    console.log(moment(e).format("YYYY-MM-DD"))
-    console.log('this is what happens when I selected date ' + e)
-    this.setState({
-        dateSelected: moment(e).format("YYYY-MM-DD")
-    });
+  // this.setState({dateCreated:""});
+    this.setState({dateSelected: "" });
    
-   }
+  }
+  // this.dateSelected({todaysDate: ""};
+    // 3. Set the dateSelected on state to be today's date again
+    taskDescriptionChanged = (event) => {
+      let taskDescription = this.state.taskDescription;
+      taskDescription = event.target.value;
+      this.setState({ taskDescription
+      });
+    }
+  
+  
+   handleDateChange = e => {
+    console.log(e.target.value);
+     // console.log(e.target.value);
+    // 1. update the state when this value changes
+    this.setState({
+      dateSelected: e.target.value
+    });
+  }
+     //  console.log(e);
+   
   
   render() {
     return (

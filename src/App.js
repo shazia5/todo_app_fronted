@@ -24,7 +24,7 @@ class App extends React.Component {
           taskDescription: "Order inhalers",
           completed: false,
           dateCreated: moment().add(2, 'days').format("YYYY-MM-DD"),
-          dateDone: ""
+         
         },
 
         {
@@ -32,21 +32,21 @@ class App extends React.Component {
           taskDescription: "Buy milk",
           completed: false,
           dateCreated:moment().add(2, 'days').format("YYYY-MM-DD"),
-          dateDone:"", 
+          
         },
         {
           id: uuidv4(),
           taskDescription: "Iman's PTA @ 6 pm",
           completed: false,
           dateCreated: moment().add(3, 'days').format("YYYY-MM-DD"),
-          dateDone: "",
+          
         },
         {
           id: uuidv4(),
           taskDescription: "Arryans's orthodontist apppintment @ 10 am",
           completed: true,
           dateCreated: moment().add(3, 'days').format("YYYY-MM-DD"),
-          dateDone: "",
+        
         },
 
 
@@ -124,9 +124,9 @@ class App extends React.Component {
         <Header />
        
         <AddTask newTask={this.addTaskToList}/>
-        <hr/>
+    <hr/>
         <TaskCounter count={this.state.tasks.length} />
-        
+        <hr />
         <TaskList
           tasks={this.state.tasks} completeTaskFunc={this.completeTask} deleteTaskFunc={this.deleteTask}
           editTaskFunc={this.editTask} />
