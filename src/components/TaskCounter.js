@@ -6,7 +6,11 @@ class TaskCounter extends React.Component {
     return (
         <div className="row d-none d-sm-block">
             <div className="col">
-                <h6>you have {this.props.count} tasks remaining
+            <h6>
+                <i className="fas fa-bell"></i>......
+                you have {this.props.count} tasks remaining
+              
+                
                 </h6>
 
               

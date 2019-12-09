@@ -10,7 +10,8 @@ class TaskList extends React.Component {
             completeTaskFunc={this.props.completeTaskFunc}
             editTaskFunc=
             {this.props.editTaskFunc}
-            task={task} key={index} />;
+        
+            task={task} key={index} date={task.date} />;
         })
         }
       </div>

@@ -7,47 +7,64 @@
   state = {
     taskDescription: "",
     dateSelected: moment().format("YYYY-MM-DD")
+   
   };
 
-  addTask = () => {
+  addTask = (e) => {
     const task = {
       id: uuidv4(),
      taskDescription:this.state.taskDescription,
-     dateSelected:this.state.dateCreated, 
+     //dateSelected:this.state.dateCreated, 
+     dateSelected:this.state.dateCreated,
+    
       // 2. another property here, the dateSelected
       // key should be dateCreated
       completed: false
     }
     
     this.props.newTask(task);
+    console.log(task);
     this.setState({ taskDescription: "" });
   // this.setState({dateCreated:""});
-    this.setState({dateSelected: "" });
-   }
+    this.setState({dateCreated: "" 
+
+  });
+}
+  // this.dateSelected({todaysDate: ""});
+  // this.dateSelected({todaysDate:moment().format("YYYY-MM-DD")});
+   
   
-   // this.dateSelected({todaysDate: ""};
-    // 3. Set the dateSelected on state to be today's date again
-    taskDescriptionChanged = (event) => {
+  
+  // this.dateSelected({todaysDate: ""});
+  // 3. Set the dateSelected on state to be today's date again
+ 
+
+    
+
+  taskDescriptionChanged = (event) => {
       let taskDescription = this.state.taskDescription;
       taskDescription = event.target.value;
       this.setState({ taskDescription
-      });
-    }
-  
-  
-   handleDateChange = e => {
-    console.log(e.target.value);
-     // console.log(e.target.value);
-    // 1. update the state when this value changes
-    this.setState({
-      dateSelected: e.target.value
     });
-    console.log(e);
-  }
-     
-   
-  
-  render() {
+}
+// handleClick = (event) => {
+//   event.preventDefault();
+//   this.props.addNewTaskFunc(this.state.taskDescription, this.state.dateSelected);
+//   this.setState({
+//     taskDescription:""
+//   });
+// }
+      handleDateChange = e => {
+       
+         // console.log(e.target.value);
+        // 1. update the state when this value changes
+        this.setState({         
+          dateSelected: e.target.value
+        });
+        console.log(e.target.value);
+        
+      } 
+render() {
     return (
       <div className="row">
         <div className="col-10 col-md-12 col-md-12">

@@ -1,13 +1,19 @@
 .body {
  margin: 0;
-}@media only screen and (max-width: 1900px) {
+}@media only screen and (max-width: 1400px) {
+  body {
+    background-color:rgb(214, 143, 214);
+    color:black
+  }
+
+}@media only screen and (max-width: 1200px) {
     body {
       background-color: rgb(133, 200, 223);
       color:blue
     }
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 1000px) {
       body {
-        background-color:rgb(240, 135, 250);
+        background-color:rgb(200, 226, 178);
         color:black
       }
     }
@@ -87,7 +93,13 @@ margin-right:5px ;
 margin-left: 5px;
   margin-inline-end: 15px;
 }
-.row{background-color: pink;
+.h6{
+  text-align: right;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+.row{background-color: rgb(224, 144, 157);
   padding-bottom: 5px;
   text-align: center;
 
@@ -99,8 +111,9 @@ margin-left: 5px;
   
   
 }
+.h6{text-align: right;
 
-  
+}
 
 
 

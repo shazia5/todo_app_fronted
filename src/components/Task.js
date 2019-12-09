@@ -38,8 +38,8 @@ class Task extends React.Component {
                 </div>
 
                 <div className="col-4 col-md-4 col-lg-4">
-                    <button type="button" className="btn btn-danger btn btn-sm m-1" onClick={this.deleteTask}>
-                        Delete
+                    <button type="button" className="btn btn-danger btn btn-lg m-1" onClick={this.deleteTask}>
+                    <i className="fas fa-trash-alt"></i>
              </button>
                 </div>
                 <div className="col-4 col-md-4 col-lg-4">

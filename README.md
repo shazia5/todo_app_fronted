@@ -1,14 +1,14 @@
 
 MyTodo Application - Frontend
-This is the front end of a MyTodo Application,this application was built during Techreturner course . 
+This is the front end of a Todo Application, built throughout the Tech Returners Your Journey Into Tech course. It integrates with a backend,  (not available yet)
+
 It integrates with a backend, (still working on that).
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-MyTodo Application - Frontend
+
 
 The hosted version of the application is available here: https://shazia5.github.io/mytodolist/.
 (not available at the moment still working on calendar)
-This project was bootstrapped with [Create 
-React App].
+
 
 Technology Used
 ReactJS
