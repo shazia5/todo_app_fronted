@@ -70,14 +70,17 @@ class AddTask extends React.Component {
           <input
             className='form-control'
             type='date'
-          onChange={this.handleDateChange}
-          value= {this.state.dateSelected}
+            id="handleDateChange"
+            value= {this.state.dateSelected}
+            onChange={this.dateSelected}
           
           >
           </input>
         </div>
         <div className="col-2 col-md-12 col-lg-12">
-          <button type="button" className="btn btn-success btn btn-lg m-2" onClick={this.addTask}
+          <button type="button" className="btn btn-success btn btn-lg m-2" 
+          onClick={this.addTask}
+          onclick={this.dateCreated}
 
           >
             Add
