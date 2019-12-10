@@ -10,6 +10,8 @@ class TaskList extends React.Component {
             completeTaskFunc={this.props.completeTaskFunc}
             editTaskFunc=
             {this.props.editTaskFunc}
+            // handleChangeTaskFunc={
+            //   this.props.handleChangeTaskFunc}         
         
             task={task} key={index} date={task.date} />;
         })
