@@ -1,8 +1,9 @@
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped 
 
-The hosted version of the application is available here: https://shazia5.github.io/mytodolist/. (not available at the moment still working on calendar)
+The hosted version of the application is available here: https://shazia5.github.io/todo_app_frontend
+/. (not available at the moment still working on calendar)
 
 Technology Used ReactJS JavaScript CSS (and Bootstrap) Webpack Axios ESLint
 
