@@ -15,7 +15,7 @@ class AddTask extends React.Component {
       id: uuidv4(),
       taskDescription: this.state.taskDescription,
       //dateSelected:this.state.dateCreated, 
-      dateSelected: this.state.dateCreated,
+      dateCreated: this.state.dateSelected,
       // 2. another property here, the dateSelected
       // key should be dateCreated
       completed: false
@@ -26,9 +26,6 @@ class AddTask extends React.Component {
     this.setState({
       taskDescription: ""
     });
-    // this.setState({dateCreated:""});
-    this.setState({dateCreated: ""
-    });
     
     this.setState({
       dateSelected: moment().format("YYYY-MM-DD")
@@ -38,19 +35,15 @@ class AddTask extends React.Component {
   // this.dateSelected({todaysDate: ""});
   // 3. Set the dateSelected on state to be today's date again
   taskDescriptionChanged = (event) => {
-    let taskDescription = this.state.taskDescription;
-    taskDescription = event.target.value;
+    let taskDescription = event.target.value;
     this.setState({
       taskDescription
     });
   }
 
   handleDateChange = e => {
-
     // console.log(e.target.value);
     // 1. update the state when this value changes
-    
-    console.log(e.target.value);
     this.setState({
       dateSelected: e.target.value
     });
@@ -72,7 +65,7 @@ class AddTask extends React.Component {
             type='date'
             id="handleDateChange"
             value= {this.state.dateSelected}
-            onChange={this.dateSelected}
+            onChange={this.handleDateChange}
           
           >
           </input>

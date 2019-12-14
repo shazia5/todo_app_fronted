@@ -24,6 +24,7 @@ class Task extends React.Component {
                     </div>
                 }
                 {!completed &&
+                    
                     <div className="col-12  col-md-6 col-lg-6">
                         {this.props.task.taskDescription}
                     </div>
